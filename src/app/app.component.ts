@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'collection_manager';
+
+  title = 'Demo';
+  data = {} as any;
+  
+  constructor(private http: HttpClient) {
+    http.get('resource').subscribe(data => this.data = data);
+  }
 }
