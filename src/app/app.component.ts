@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'Demo';
-  data = {} as any;
+  greeting = {} as any;
   
   constructor(private http: HttpClient) {
-    http.get('resource').subscribe(data => this.data = data);
+    http.get('resource').subscribe(data => this.greeting = data);
   }
 }
