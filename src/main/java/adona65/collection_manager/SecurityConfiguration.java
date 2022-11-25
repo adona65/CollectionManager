@@ -30,7 +30,9 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         logger.info("Will perform all Spring security's configurations.");
         
-        http.authorizeRequests()
+        http.cors()
+        .and()
+            .authorizeRequests()
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
             .anyRequest().authenticated()
         .and()
