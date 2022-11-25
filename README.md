@@ -1,5 +1,5 @@
 # Collection manager
-The goal of this project is to practice various concepts and technologies in the development process of a real application : an application for managing collections easily (coins, stamps, disks, whatsoever).
+The goal of this project is to practice various concepts and technologies during a real development process : the creation of an application for managing collections easily (coins, stamps, discs, whatsoever).
 
 ## Technologies and concepts used :
 #### Front-End

@@ -10,11 +10,13 @@ The goal of this document is explaining various informations about this project.
 ## Application informations
 #### Launch the application (for Windows)
 - With command prompt, go to project's folder.
-- Use <span style="color: green;">*mvnw spring-boot:run*</span>. This will launch both Spring boot and Angular, thanks to maven pluggins. The application will listen by default on Spring Boot's port "8080" : <a href="http://localhost:8080">http://localhost:8080</a> (and not on Angular's default port "4200").
+- Use <span style="color: green;">*mvnw spring-boot:run*</span>. This will launch the back-end Spring boot's part. It will listen by default on Spring Boot's port "8080".
+- With a second command prompt, go to project's folder as well.
+- Use <span style="color: green;">*ng serve --o*</span>. This will launch the front-end Angular's part (and open a browser on application's home page). It will listen by default on Angular's port "4200" : <a href="http://localhost:4200">http://localhost:4200</a>
 
-#### Hot build application during developments (for Windows)
-- Open another command prompt's window, then go to project's folder.
-- Use <span style="color: green;">*ng build --watch*</span>. Updates are built (quickly) and pushed to target/classes where they can be picked up by Spring Boot. The changes may then be watched in browser.
+#### Hot build application during developments
+- Spring boot's hot build is managed by a dependency added to maven configuration (in pom.xml file) : org.springframework.boot.spring-boot-devtools
+- Angular's hot build is automatically done thanks to <span style="color: green;">*ng serve --o*</span> command we used for launching front-end part.
 
 #### Conveniently launch application for developments (for Windows)
-Launch <span style="color: green;">*app-launch-dev.bat*</span> script stored inside project's root directory. It will open two command prompt, each with previous commands.
+Launch <span style="color: green;">*app-launch-dev.bat*</span> script stored inside project's root directory. It will open two command prompt, each executing launch of either front-end or back-end part of application. One will contain logs from Sprint boot, the other from Angular.
