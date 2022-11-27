@@ -52,6 +52,8 @@ public class SecurityConfiguration {
          */
         .and()
             .csrf()
+            // Angular wants csrf's cookie name to be "XSRF-TOKEN" and Spring Security provides it as a request attribute by default. 
+            // We just transfer the value from a request attribute to a cookie.
             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
          .and()
              .exceptionHandling()
